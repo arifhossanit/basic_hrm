@@ -96,7 +96,3 @@ If you're using Laragon, simply start your Apache and MySQL services, and access
 
 Feel free to fork this project and submit pull requests for improvements.
 
-## License
-
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-"# basic_hrm" 
