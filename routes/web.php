@@ -20,8 +20,8 @@ Route::middleware('auth')->group(function () {
     Route::get('employees/check-email', [App\Http\Controllers\EmployeeController::class, 'checkEmail'])->name('employees.checkEmail');
     Route::resource('employees', App\Http\Controllers\EmployeeController::class);
 
-    Route::resource('departments', App\Http\Controllers\DepartmentController::class)->only(['index', 'create', 'store']);
-    Route::resource('skills', App\Http\Controllers\SkillController::class)->only(['index', 'create', 'store']);
+    Route::resource('departments', App\Http\Controllers\DepartmentController::class)->only(['index', 'create', 'store', 'destroy']);
+    Route::resource('skills', App\Http\Controllers\SkillController::class)->only(['index', 'create', 'store', 'destroy']);
 });
 
 require __DIR__.'/auth.php';

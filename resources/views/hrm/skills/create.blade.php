@@ -9,6 +9,9 @@
         <div class="mb-2">
             <label class="block font-medium text-sm mb-1">Name</label>
             <input type="text" name="name" class="border rounded px-3 py-2 w-full" required>
+            @error('name')
+                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+            @enderror
         </div>
         <div>
             <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Save</button>

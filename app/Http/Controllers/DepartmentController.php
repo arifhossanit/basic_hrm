@@ -33,4 +33,11 @@ class DepartmentController extends Controller
 
         return redirect()->route('departments.index')->with('success', 'Department created.');
     }
+
+    public function destroy(Department $department)
+    {
+        $department->delete();
+
+        return redirect()->route('departments.index')->with('success', 'Department deleted.');
+    }
 }

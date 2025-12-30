@@ -10,7 +10,14 @@
     <div class="bg-white rounded shadow p-4">
         <ul class="divide-y">
             @foreach($departments as $d)
-                <li class="py-2">{{ $d->name }}</li>
+                <li class="py-2 flex justify-between items-center">
+                    {{ $d->name }}
+                    <form action="{{ route('departments.destroy', $d) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this department?')" class="inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm">Delete</button>
+                    </form>
+                </li>
             @endforeach
         </ul>
     </div>

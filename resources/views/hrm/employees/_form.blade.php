@@ -22,7 +22,7 @@
     <div>
         <label class="block font-medium text-sm mb-1">Last name</label>
         <input type="text" name="last_name" value="{{ old('last_name', $employee->last_name ?? '') }}" class="border rounded px-3 py-2 w-full" required>
-    </div>
+     </div>
 
     <div>
         <label class="block font-medium text-sm mb-1">Email</label>
@@ -35,13 +35,13 @@
         <select name="department_id" class="border rounded px-3 py-2 w-full" required>
             <option value="">-- Select --</option>
             @foreach($departments as $dept)
-                <option value="{{ $dept->id }}" {{ isset($employee) && $employee->department_id == $dept->id ? 'selected' : '' }}>{{ $dept->name }}</option>
+                <option value="{{ $dept->id }}" {{ isset($employee) && $employee->department_id == $dept->id || old('department_id') == $dept->id ? 'selected' : '' }}>{{ $dept->name }}</option>
             @endforeach
         </select>
     </div>
 
     <div>
-        <label class="block font-medium text-sm mb-1">Skills</label>
+        <label class="block font-medium text-sm mb-1">Skills (optional)</label>
         <select id="skills-select" name="skills[]" multiple class="border rounded px-3 py-2 w-full">
             @foreach($skills as $skill)
                 <option value="{{ $skill->id }}" {{ isset($employee) && $employee->skills->pluck('id')->contains($skill->id) ? 'selected' : '' }}>{{ $skill->name }}</option>
